@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使用教程 — 义乌外贸/跨境电商出海 · Jabbar VIP</title>
+<meta name="description" content="义乌外贸B2B/跨境电商出海服务平台｜Jabbar VIP使用教程，覆盖 Windows、Android、iOS / Mac 全平台 VPN 客户端配置指南。">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --accent: #5b8cff;
+  --accent-hover: #76a0ff;
+  --accent-tint: rgba(91,140,255,0.12);
+  --accent-line: rgba(91,140,255,0.32);
+
+  --ink: #e8edf7;
+  --ink-soft: #c7d2e6;
+  --ink-mute: #9fb0cc;
+  --ink-faint: #6f82a4;
+
+  --bg: #0e1320;
+  --bg-soft: #141b2c;
+  --bg-panel: #151c2e;
+
+  --line: #23304a;
+  --line-strong: #2e3d5c;
+
+  --shadow: 0 8px 30px rgba(0,0,0,0.45);
+
+  --font-display: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Inter', 'Microsoft YaHei', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, #1a2440 0, transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--accent); color: white; }
+a { color: inherit; text-decoration: none; }
+
+/* ============ Top Bar (免责声明) ============ */
+.top-bar {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--line);
+}
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.top-bar-icon { display: inline-flex; opacity: 0.7; }
+.top-bar-icon svg { width: 13px; height: 13px; }
+
+/* ============ Nav ============ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 19, 32, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+nav.scrolled { border-bottom-color: var(--line); }
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--accent); }
+.nav-back svg { width: 14px; height: 14px; }
+
+/* ============ Hero ============ */
+.hero {
+  padding: 80px 28px 48px;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 5.5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.hero-sub {
+  font-size: 16px;
+  color: var(--ink-mute);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ============ Tabs ============ */
+.tabs-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 28px 96px;
+}
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-panel);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 48px;
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+}
+.tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-mute);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.tab:hover { color: var(--ink); }
+.tab.active {
+  background: var(--bg-soft);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  font-weight: 600;
+}
+
+/* ============ Panel ============ */
+.panel { display: none; animation: fadeIn 0.4s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.panel-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+.panel-desc {
+  font-size: 16px;
+  color: var(--ink-mute);
+  margin-bottom: 48px;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.sub-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 56px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.sub-heading:first-of-type { margin-top: 0; }
+
+/* ============ Steps ============ */
+.step {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.step:last-of-type { border-bottom: none; }
+
+.step-num {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  width: 32px;
+  letter-spacing: 0.02em;
+}
+
+.step-body { flex: 1; min-width: 0; }
+.step-body h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.step-body p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+.step-body p:last-child { margin-bottom: 0; }
+.step-body ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.step-body ul li { margin-bottom: 4px; }
+.step-body strong { color: var(--ink); font-weight: 600; }
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-panel);
+  color: var(--ink);
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--line);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ============ Callout ============ */
+.callout {
+  background: var(--accent-tint);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+.callout-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.callout p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout strong { color: var(--ink); font-weight: 600; }
+
+/* ============ Footer ============ */
+footer {
+  padding: 48px 28px 40px;
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+.foot-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.foot-inner .logo { font-size: 14px; color: var(--ink); }
+
+@media (max-width: 680px) {
+  .hero { padding: 56px 20px 32px; }
+  .tabs-wrap { padding: 0 20px 64px; }
+  .tabs { top: 56px; }
+  .tab { font-size: 13px; padding: 8px 10px; }
+  .step { gap: 14px; }
+  .step-num { width: 26px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="top-bar-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </span>
+    <span>本站工具仅供学习研究、跨境电商与海外业务等合法用途，请遵守所在地法律法规</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-dot"></span>Jabbar VIP</a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      返回首页
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-eyebrow">SETUP GUIDE</div>
+  <h1>使用教程</h1>
+  <p class="hero-sub">Windows、Android、iOS / Mac 全平台客户端配置指南。订阅链接由客服提供，按对应平台步骤即可完成配置。</p>
+</header>
+
+<!-- ============ TABS & PANELS ============ -->
+<div class="tabs-wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="windows" role="tab">Windows</button>
+    <button class="tab" data-tab="android" role="tab">Android</button>
+    <button class="tab" data-tab="apple" role="tab">iOS / Mac</button>
+  </div>
+
+  <!-- ========== Windows ========== -->
+  <div class="panel active" id="windows">
+    <div class="section-label">Platform 01</div>
+    <h2 class="panel-title">Windows 电脑</h2>
+    <p class="panel-desc">适用于 Windows 10 与 Windows 11。Windows 7 用户请联系客服获取旧版客户端。</p>
+
+    <h3 class="sub-heading">安装与配置</h3>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <h4>下载并解压 v2rayN</h4>
+        <p>从客服处下载 v2rayN 的 Windows 安装包，将压缩文件解压到任意文件夹（建议新建一个固定目录长期使用）。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <h4>启动程序</h4>
+        <p>打开解压后的文件夹，找到名为 <span class="kbd">v2rayN.exe</span> 的文件（图标为字母 <strong>V</strong>），双击运行。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <h4>导入订阅链接</h4>
+        <p>复制客服提供的订阅链接到剪贴板，然后：</p>
+        <ul>
+          <li>在 v2rayN 程序左上角点击 <strong>"配置"</strong></li>
+          <li>选择菜单第一项 <strong>"从剪贴板导入链接"</strong></li>
+          <li>订阅链接会自动导入并解析所有节点</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <h4>设置系统代理</h4>
+        <p>在程序最下方找到 <strong>"清除系统代理"</strong>，点击展开后选择 <strong>"自动配置系统代理"</strong>。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <h4>重启程序使配置生效</h4>
+        <ul>
+          <li>在屏幕最右下角找到红色的 <strong>V</strong> 图标</li>
+          <li>右键点击，选择 <strong>"退出"</strong></li>
+          <li>重新双击 v2rayN.exe 启动程序</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">常见问题</h3>
+
+    <div class="callout">
+      <div class="callout-label">延迟显示 −1</div>
+      <p>正常运行时，软件右下角延迟应为正数。如显示 <span class="kbd">−1</span>，通常是系统时间不准确导致。</p>
+      <p>解决方法：进入 Windows 系统设置 → <strong>日期和时间</strong> → <strong>同步时钟</strong>，然后重启 v2rayN 即可。</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">使用 WhatsApp 桌面版</div>
+      <p>如需在 Windows 上使用 WhatsApp 客户端版本，请在软件最底部勾选 <strong>"启用 TUN"</strong> 选项，部分非浏览器应用才能走代理。</p>
+    </div>
+  </div>
+
+  <!-- ========== Android ========== -->
+  <div class="panel" id="android">
+    <div class="section-label">Platform 02</div>
+    <h2 class="panel-title">Android 手机</h2>
+    <p class="panel-desc">适用于所有 Android 系统手机与平板。推荐使用 v2rayNG 或 NekoBox。</p>
+
+    <h3 class="sub-heading">安装与配置</h3>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <h4>安装 App</h4>
+        <p>在 Android 手机上安装以下任意一个客户端（客服处通常会提供 APK 下载）：</p>
+        <ul>
+          <li><strong>v2rayNG</strong> — 经典款，功能完整</li>
+          <li><strong>NekoBox</strong> — 界面更现代，支持协议更多</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <h4>导入订阅链接</h4>
+        <p>复制客服提供的订阅链接到剪贴板，然后：</p>
+        <ul>
+          <li>打开安装好的 App</li>
+          <li>点击右上角的 <strong>"+"</strong> 图标</li>
+          <li>选择菜单中的 <strong>"从剪贴板导入链接"</strong></li>
+        </ul>
+        <p style="margin-top: 10px;">如果客服提供的是二维码，也可以在 App 内选择 <strong>"扫描二维码"</strong> 直接导入。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <h4>启动 VPN</h4>
+        <ul>
+          <li>在 App 内选中导入的线路（点选高亮）</li>
+          <li>点击 App 最底部的 <strong>三角形开关</strong> 启动连接</li>
+          <li>系统弹出 VPN 权限请求时选择"允许"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Apple ========== -->
+  <div class="panel" id="apple">
+    <div class="section-label">Platform 03</div>
+    <h2 class="panel-title">iPhone · iPad · Mac</h2>
+    <p class="panel-desc">适用于所有苹果生态设备，推荐统一使用 Shadowrocket（小火箭）。</p>
+
+    <h3 class="sub-heading">安装与配置</h3>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <h4>下载 Shadowrocket</h4>
+        <p>使用 <strong>美区 Apple ID</strong> 登录 App Store，搜索并下载 <strong>Shadowrocket</strong>。该应用国区下架，必须使用海外区账号。</p>
+        <p style="margin-top: 8px;">没有美区 Apple ID？可在 <a href="index.html#appleid" style="color: var(--accent); font-weight: 500;">首页 · 美区 Apple ID</a> 分类购买。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <h4>导入配置</h4>
+        <ul>
+          <li>打开 Shadowrocket，点击左上角的 <strong>扫码按钮</strong></li>
+          <li>扫描客服提供的订阅二维码</li>
+          <li>弹出任何权限请求，<strong>全部选择"允许"</strong></li>
+        </ul>
+        <p style="margin-top: 10px;">如果只有订阅链接没有二维码，也可以点击右上角 <strong>"+"</strong> → 选择 <strong>"Subscribe"</strong> 粘贴链接导入。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <h4>启动 VPN</h4>
+        <ul>
+          <li>导入成功后，在 App 内选中线路</li>
+          <li>打开右上角的 <strong>VPN 开关</strong> 即可连接</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">首次连接提示</div>
+      <p>首次连接时，系统会弹出 <strong>"是否允许添加 VPN 配置"</strong> 的提示，请选择 <strong>允许</strong>。此后再次启动 VPN 不会重复弹出此提示。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <div class="logo"><span class="logo-dot"></span>Jabbar VIP</div>
+    <div>© 2026 Jabbar VIP · ALL RIGHTS RESERVED</div>
+  </div>
+</footer>
+
+<script>
+// Tab 切换
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.panel');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    // 切换后回到顶部（避免长内容下切换 tab 出现位置偏移）
+    document.querySelector('.tabs-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// URL hash 支持：直接 setup.html#android 进入会自动切到对应 tab
+(function() {
+  const hash = window.location.hash.slice(1);
+  if (hash) {
+    const tab = document.querySelector(`.tab[data-tab="${hash}"]`);
+    if (tab) tab.click();
+  }
+})();
+
+// Nav scroll 阴影
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 8);
+});
+</script>
+
+</body>
+</html>

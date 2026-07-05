@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok 账号注册与登录指南 — 义乌外贸/跨境电商出海 · Jabbar VIP</title>
+<meta name="description" content="义乌外贸B2B/跨境电商出海服务平台｜TikTok 账号注册、邮箱验证、登录验证码与 iPhone 注册风控注意事项整理。">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://qianjiabao1999.github.io/jabbarvip-site/tiktok-guide.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --accent: #5b8cff;
+  --accent-hover: #76a0ff;
+  --accent-tint: rgba(91,140,255,0.12);
+  --accent-line: rgba(91,140,255,0.32);
+  --ink: #e8edf7;
+  --ink-soft: #c7d2e6;
+  --ink-mute: #9fb0cc;
+  --ink-faint: #6f82a4;
+  --bg: #0e1320;
+  --bg-soft: #141b2c;
+  --bg-panel: #151c2e;
+  --line: #23304a;
+  --line-strong: #2e3d5c;
+  --shadow: 0 12px 40px rgba(0,0,0,0.5);
+  --font-display: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Inter', 'Microsoft YaHei', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, #1a2440 0, transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--accent); color: white; }
+a { color: inherit; text-decoration: none; }
+
+.top-bar {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--line);
+}
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.top-bar-icon { display: inline-flex; opacity: 0.7; }
+.top-bar-icon svg { width: 13px; height: 13px; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 19, 32, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+nav.scrolled { border-bottom-color: var(--line); }
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-link:hover { color: var(--accent); }
+.nav-link svg { width: 14px; height: 14px; }
+
+.hero {
+  padding: 84px 28px 40px;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-logo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  border-radius: 18px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+.hero-logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  margin-bottom: 18px;
+}
+.hero-sub {
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 17px;
+  color: var(--ink-mute);
+  line-height: 1.65;
+}
+
+.quick-nav {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 28px 44px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.quick-nav a {
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--bg-soft);
+  white-space: nowrap;
+}
+.quick-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  background: var(--accent-tint);
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 28px 96px;
+}
+.section {
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 78px;
+}
+.section:first-child { border-top: none; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.section-desc {
+  max-width: 720px;
+  color: var(--ink-mute);
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+.steps {
+  display: grid;
+  gap: 0;
+}
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+.step-body h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.step-body p,
+.step-body li {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+.step-body ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+.step-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.inline-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+.note {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.note h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.note p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.callout {
+  background: var(--accent-tint);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-top: 26px;
+}
+.callout-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.callout p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+footer {
+  padding: 48px 28px 40px;
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+.foot-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.foot-inner .logo {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 760px) {
+  .top-bar-inner { padding: 8px 18px; font-size: 11px; justify-content: flex-start; }
+  .nav-inner { padding: 0 18px; }
+  .nav-links { gap: 10px; }
+  .nav-link span { display: none; }
+  .hero { padding: 56px 20px 30px; }
+  .quick-nav { padding: 0 20px 30px; justify-content: center; flex-wrap: wrap; }
+  main { padding: 0 20px 72px; }
+  .section { padding: 42px 0; }
+  .step { grid-template-columns: 38px 1fr; gap: 12px; }
+  .note-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="top-bar-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </span>
+    <span>本页仅整理账号注册与登录常见流程，请遵守平台规则与所在地法律法规</span>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-dot"></span>Jabbar VIP</a>
+    <div class="nav-links">
+      <a href="setup.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span>使用教程</span>
+      </a>
+      <a href="index.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>返回首页</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-logo">
+    <img src="assets/logos/tiktok.svg" alt="TikTok">
+  </div>
+  <div class="hero-eyebrow">ACCOUNT GUIDE</div>
+  <h1>TikTok 账号注册与登录指南</h1>
+  <p class="hero-sub">把邮箱准备、App 注册、登录验证码、iPhone 注册风控这些容易卡住的环节整理成一份清晰流程。</p>
+</header>
+
+<div class="quick-nav" aria-label="页面导航">
+  <a href="#register">注册 TikTok</a>
+  <a href="#login">登录 TikTok</a>
+  <a href="#risk">注册后封号</a>
+  <a href="#iphone">iPhone 建议</a>
+</div>
+
+<main>
+  <section class="section" id="register">
+    <div class="section-label">Part 01</div>
+    <h2>如何自己注册 TikTok 账号</h2>
+    <p class="section-desc">推荐先准备一个可正常收信的邮箱，再在 iPhone 的 TikTok App 内完成注册。生日、密码和验证码按 App 提示如实填写。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>准备一个 Outlook 邮箱</h3>
+          <p>在电脑浏览器打开 <a class="inline-link" href="https://outlook.com" target="_blank" rel="noopener noreferrer">outlook.com</a>，或在 iPhone 下载 Outlook App，注册一个新的 Outlook 邮箱。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>打开 TikTok App 选择邮箱注册</h3>
+          <p>在 iPhone 的 TikTok App 里选择使用邮箱注册，输入刚准备好的邮箱，然后按照 App 页面提示继续操作。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>填写生日与密码</h3>
+          <p>生日需满足平台年龄要求，建议按真实信息填写。密码建议包含大写字母、小写字母、数字和特殊符号，降低登录异常与忘记密码的风险。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>不要在同一台手机上频繁注册</h3>
+          <p>同一部手机不要短时间连续注册多个 TikTok 账号。经验上可以每隔两三天再注册一个，避免被平台误判为批量自动化注册。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="login">
+    <div class="section-label">Part 02</div>
+    <h2>如何登录 TikTok</h2>
+    <p class="section-desc">TikTok 常会把验证码发到注册邮箱，所以登录前先确认邮箱可以正常打开、收信和查看验证码。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>先登录对应邮箱</h3>
+          <p>如果 TikTok 账号是 Outlook 邮箱，就先打开 <a class="inline-link" href="https://outlook.com" target="_blank" rel="noopener noreferrer">outlook.com</a>；如果是 Gmail，就打开 <a class="inline-link" href="https://gmail.com" target="_blank" rel="noopener noreferrer">gmail.com</a>。也可以在 iPhone 上用 Outlook 或 Gmail App 登录邮箱。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>再登录 TikTok</h3>
+          <p>在手机 TikTok App 输入账号和密码。电脑端也可以访问 <a class="inline-link" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">tiktok.com</a> 登录，流程和手机端基本一致。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>查看邮箱验证码</h3>
+          <p>如果账号和密码正确，TikTok App 通常会提示向邮箱发送验证码。回到邮箱收件箱，找到 TikTok 发来的邮件。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>输入验证码完成登录</h3>
+          <p>将邮件中的验证码输入 TikTok App，即可完成登录。若没收到邮件，先检查垃圾邮件、广告邮件和邮箱是否登录的是同一个账号。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="risk">
+    <div class="section-label">Part 03</div>
+    <h2>为什么 iPhone 上一注册就被封</h2>
+    <p class="section-desc">常见原因不是某一个邮箱或某一条线路本身，而是设备、网络、注册频率、历史行为叠加后被平台风控系统判断为异常注册。</p>
+
+    <div class="note-grid">
+      <div class="note">
+        <h3>可能的核心原因</h3>
+        <p>同一部手机短时间注册过多账号，或者设备环境长期出现异常注册行为，可能被平台标记为批量注册风险。</p>
+      </div>
+      <div class="note">
+        <h3>更稳妥的做法</h3>
+        <p>减少注册频率，尽量使用长期稳定、干净的设备环境。注册后先正常使用，不要马上进行高频操作。</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">处理思路</div>
+      <p>如果某台 iPhone 连续出现刚注册就受限，可以换用另一台正常使用 TikTok 的 iPhone，或先在电脑端 tiktok.com 完成注册，等待约 48 小时后再回到这台手机登录。这里是经验性建议，不保证一定适用于所有账号。</p>
+    </div>
+  </section>
+
+  <section class="section" id="iphone">
+    <div class="section-label">Part 04</div>
+    <h2>如何降低二手 iPhone 的注册风险</h2>
+    <p class="section-desc">如果长期用于跨境账号注册，设备来源和设备状态会明显影响成功率。核心不是追求大量注册，而是保持环境稳定、真实、低频。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>避免使用历史复杂的设备</h3>
+          <p>国行二手 iPhone 如果曾被多人频繁用于注册账号，可能已经积累了较多异常记录。换机不一定立刻解决问题，但干净设备通常更稳。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>美版有锁 iPhone 的经验观察</h3>
+          <p>有用户反馈美版有锁全新 iPhone 因为新机、且自带美国 eSIM，注册 TikTok 账号更稳定。价格和可用性会随市场变化，购买前请自行核实。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>不要抹掉 eSIM</h3>
+          <p>部分美版有锁 iPhone 没有实体 SIM 卡槽，只能使用 eSIM。还原出厂设置时不要选择抹掉 eSIM，否则后续激活和使用可能变复杂。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="logo"><span class="logo-dot"></span>Jabbar VIP</div>
+    <div>© 2026 Jabbar VIP · ACCOUNT GUIDE</div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 8);
+});
+</script>
+
+</body>
+</html>

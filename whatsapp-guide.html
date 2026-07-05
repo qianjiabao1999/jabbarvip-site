@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp 注册指南 — 义乌外贸/跨境电商出海 · Jabbar VIP</title>
+<meta name="description" content="义乌外贸B2B/跨境电商出海服务平台｜WhatsApp 账号注册、移动/电信/联通国际短信电话拦截检查、语音电话验证码接收与常见处理建议。">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://qianjiabao1999.github.io/jabbarvip-site/whatsapp-guide.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --accent: #5b8cff;
+  --accent-hover: #76a0ff;
+  --accent-tint: rgba(91,140,255,0.12);
+  --accent-line: rgba(91,140,255,0.32);
+  --ink: #e8edf7;
+  --ink-soft: #c7d2e6;
+  --ink-mute: #9fb0cc;
+  --ink-faint: #6f82a4;
+  --bg: #0e1320;
+  --bg-soft: #141b2c;
+  --bg-panel: #151c2e;
+  --line: #23304a;
+  --shadow: 0 12px 40px rgba(0,0,0,0.5);
+  --font-display: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Inter', 'Microsoft YaHei', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, #1a2440 0, transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--accent); color: white; }
+a { color: inherit; text-decoration: none; }
+
+.top-bar {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--line);
+}
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.top-bar-icon { display: inline-flex; opacity: 0.7; }
+.top-bar-icon svg { width: 13px; height: 13px; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 19, 32, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+nav.scrolled { border-bottom-color: var(--line); }
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-link:hover { color: var(--accent); }
+.nav-link svg { width: 14px; height: 14px; }
+
+.hero {
+  padding: 84px 28px 40px;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-logo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  border-radius: 18px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+.hero-logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  margin-bottom: 18px;
+}
+.hero-sub {
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 17px;
+  color: var(--ink-mute);
+  line-height: 1.65;
+}
+.quick-nav {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 28px 44px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.quick-nav a {
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--bg-soft);
+  white-space: nowrap;
+}
+.quick-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  background: var(--accent-tint);
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 28px 96px;
+}
+.section {
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 78px;
+}
+.section:first-child { border-top: none; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.section-desc {
+  max-width: 720px;
+  color: var(--ink-mute);
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+.steps { display: grid; gap: 0; }
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+.step-body h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.step-body p,
+.step-body li {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+.step-body ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+.step-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.callout {
+  background: var(--accent-tint);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-top: 26px;
+}
+.callout-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.callout p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 48px 28px 40px;
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+.foot-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.foot-inner .logo {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 760px) {
+  .top-bar-inner { padding: 8px 18px; font-size: 11px; justify-content: flex-start; }
+  .nav-inner { padding: 0 18px; }
+  .nav-links { gap: 10px; }
+  .nav-link span { display: none; }
+  .hero { padding: 56px 20px 30px; }
+  .quick-nav { padding: 0 20px 30px; justify-content: center; flex-wrap: wrap; }
+  main { padding: 0 20px 72px; }
+  .section { padding: 42px 0; }
+  .step { grid-template-columns: 38px 1fr; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="top-bar-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </span>
+    <span>本页仅整理账号注册与验证码接收常见流程，请遵守平台规则与所在地法律法规</span>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-dot"></span>Jabbar VIP</a>
+    <div class="nav-links">
+      <a href="tiktok-guide.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 108 0V3"/><path d="M17 3h4"/><path d="M17 7h4"/></svg>
+        <span>TikTok 指南</span>
+      </a>
+      <a href="index.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>返回首页</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-logo">
+    <img src="assets/logos/whatsapp.svg" alt="WhatsApp">
+  </div>
+  <div class="hero-eyebrow">ACCOUNT GUIDE</div>
+  <h1>WhatsApp 注册指南</h1>
+  <p class="hero-sub">重点处理国际短信与语音电话验证码：先确认运营商拦截，再用语音电话接收验证码，按提示快速操作。</p>
+</header>
+
+<div class="quick-nav" aria-label="页面导航">
+  <a href="#prepare">关闭拦截</a>
+  <a href="#voice">语音验证</a>
+  <a href="#code">输入验证码</a>
+  <a href="#backup">接不到验证码</a>
+</div>
+
+<main>
+  <section class="section" id="prepare">
+    <div class="section-label">Part 01</div>
+    <h2>注册前先确认电话和短信拦截</h2>
+    <p class="section-desc">中国大陆号码可以先联系运营商确认是否拦截国际电话或国际短信，避免验证码电话打不进来。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>拨打运营商客服热线转人工</h3>
+          <p>移动 10086 / 电信 10000 / 联通 10010，跟客服说明你需要接收国外的电话和短信，请客服帮你检查号码是否有国际电话、国际短信或骚扰拦截。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>如有拦截，先关闭</h3>
+          <p>如果客服查到有相关拦截，先让客服关闭。关闭后再开始 WhatsApp 注册，成功率会更高。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="voice">
+    <div class="section-label">Part 02</div>
+    <h2>选择语音电话接收验证码</h2>
+    <p class="section-desc">按 WhatsApp 正常注册流程输入手机号。如果短信验证码收不到，或你想直接用电话验证，可以选择语音电话接收验证码。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>等待验证电话打进来</h3>
+          <p>选择语音电话后，手机会接到一个自动语音电话。保持手机信号稳定，电话一来就接听。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>听到提示后马上按数字</h3>
+          <p>电话里会播放类似“如要接收 WhatsApp 验证码请按某个数字”的提示。听到第一遍后立刻按它说的数字，动作要快。</p>
+          <p>不要等到第二遍才按，否则电话有较大概率直接挂断，之后通常要重新等待一段时间才能再试。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="code">
+    <div class="section-label">Part 03</div>
+    <h2>记录并输入 6 位验证码</h2>
+    <p class="section-desc">按下电话提示的数字后，对方会播报 6 位验证码。建议提前准备纸笔或让旁边的人帮忙记一下。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>记住 6 位数字</h3>
+          <p>听清楚验证码后马上记下。如果没听清，不要乱填，等系统允许后再重新获取验证码。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>输入到 WhatsApp</h3>
+          <p>回到 WhatsApp 注册页面，把 6 位验证码输入进去，即可继续完成账号注册。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="backup">
+    <div class="section-label">Part 04</div>
+    <h2>如果短信和电话都接不到</h2>
+    <p class="section-desc">如果短信验证码接不到，语音电话也打不进来，可以先回到运营商侧排查拦截、号码状态和手机信号。</p>
+
+    <div class="callout">
+      <div class="callout-label">实在解决不了，请使用第三方服务</div>
+      <p>如果自己排查后仍然搞不定，可以在闲鱼 App 搜索 WhatsApp，找人协助处理注册或封锁问题，常见价格是几十元人民币一次。注意不要向陌生人泄露验证码、账号密码、邮箱密码或其他敏感信息。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="logo"><span class="logo-dot"></span>Jabbar VIP</div>
+    <div>© 2026 Jabbar VIP · WHATSAPP GUIDE</div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 8);
+});
+</script>
+
+</body>
+</html>
